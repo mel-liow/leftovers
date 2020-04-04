@@ -27,6 +27,8 @@ dependencies:
     - asset: assets/FuturaPT-Light.ttf
     - asset: assets/FuturaPT-Book.ttf
     - asset: assets/FuturaPT-Medium.ttf
+    - asset: assets/FreightDisp-Medium.otf
+    - asset: assets/FreightDisp-Bold.otf
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
