@@ -27,7 +27,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Leftovers'),
+        title: Text(
+          'Leftovers',
+          style: Theme.of(context).textTheme.headline1,
+          textAlign: TextAlign.left,
+        ),
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -35,15 +39,15 @@ class _HomeState extends State<Home> {
         currentIndex: _currentIndex,
         items: [
           new BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.search),
             title: Text('discover'),
           ),
           new BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
+            icon: Icon(Icons.favorite),
             title: Text('favourites'),
           ),
           new BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('orders'))
+              icon: Icon(Icons.shopping_basket), title: Text('orders'))
         ],
       ),
     );
