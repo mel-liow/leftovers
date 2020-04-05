@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../placeholder/placeholder.dart';
+import '../discover/discover.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,10 +12,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
+    DiscoverWidget(),
     PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.green)
+    PlaceholderWidget(Colors.white),
   ];
 
   void onTabTapped(int index) {
@@ -27,6 +27,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: Text(
           'Leftovers',
           style: Theme.of(context).textTheme.headline1,

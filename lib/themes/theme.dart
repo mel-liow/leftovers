@@ -9,9 +9,9 @@ final ThemeData appThemeData = new ThemeData(
     accentColor: CompanyColors.mustard[500],
     accentColorBrightness: Brightness.light,
     fontFamily: 'FuturaPt',
-    //fontFamily: 'FreightDisplay',
     textTheme: TextTheme(
-      headline1: TextStyle(fontSize: 36.0, fontFamily: 'FreightDisplay'),
+      headline1: TextStyle(
+          fontSize: 36.0, fontFamily: 'FreightDisplay', color: Colors.white),
       headline2: TextStyle(fontSize: 24.0),
       bodyText1: TextStyle(fontSize: 16.0, fontFamily: 'FuturaPT'),
       bodyText2: TextStyle(fontSize: 14.0),
