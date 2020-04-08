@@ -23,6 +23,7 @@ class DiscoverWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.all(20),
       itemCount: foodCards.length,
       itemBuilder: (context, index) {
         return DiscoverCardWidget(

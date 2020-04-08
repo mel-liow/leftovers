@@ -15,7 +15,7 @@ class DiscoverCardWidget extends StatelessWidget {
     return new Card(
       child: Container(
         child: Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
           child: Column(children: <Widget>[
             Row(
               children: <Widget>[
@@ -36,7 +36,7 @@ class DiscoverCardWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Padding(
@@ -54,7 +54,7 @@ class DiscoverCardWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                       child: Text(
                         '£3',
                         style: Theme.of(context).textTheme.bodyText1,

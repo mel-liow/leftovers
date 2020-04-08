@@ -6,7 +6,14 @@ final ThemeData appThemeData = new ThemeData(
         MaterialColor(CompanyColors.green[50].value, CompanyColors.green),
     primaryColor: CompanyColors.green[500],
     primaryColorBrightness: Brightness.light,
-    accentColor: CompanyColors.mustard[500],
+    accentColor: CompanyColors.beige[500],
+    cardTheme: CardTheme(
+      color: CompanyColors.beige[500],
+      shadowColor: CompanyColors.mustard[500],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+    ),
     accentColorBrightness: Brightness.light,
     fontFamily: 'FuturaPt',
     textTheme: TextTheme(
