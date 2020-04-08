@@ -15,9 +15,9 @@ class FoodCardWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const ListTile(
-            leading: Icon(Icons.album),
+            leading: Icon(Icons.favorite),
             // title: Text(foodItem.itemName),
-            title: Text('Pret'),
+            title: Text('hi'),
             subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
           ),
         ],
