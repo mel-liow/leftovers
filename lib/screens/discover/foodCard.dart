@@ -11,16 +11,34 @@ class FoodCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.favorite),
-            // title: Text(foodItem.itemName),
-            title: Text('hi'),
-            subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-          ),
-        ],
+      child: Container(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: new EdgeInsets.all(0.0),
+                      color: Theme.of(context).accentColor,
+                      child: new ButtonBar(
+                        alignment: MainAxisAlignment.start,
+                        buttonPadding: EdgeInsets.only(
+                            left: 0, right: 0, top: 0, bottom: 0),
+                        children: <Widget>[
+                          Text(
+                            this.foodItem.shopName,
+                            style: Theme.of(context).textTheme.headline3,
+                            textAlign: TextAlign.left,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ]),
       ),
     );
   }
