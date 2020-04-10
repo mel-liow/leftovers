@@ -3,11 +3,9 @@ import './foodItem.dart';
 
 class DiscoverCardWidget extends StatelessWidget {
   final FoodItem foodItem;
-  final Function() onTap;
   final Function() onLike;
 
-  DiscoverCardWidget(
-      {Key key, @required this.foodItem, this.onTap, this.onLike})
+  DiscoverCardWidget({Key key, @required this.foodItem, this.onLike})
       : super(key: key);
 
   @override
@@ -79,8 +77,11 @@ class DiscoverCardWidget extends StatelessWidget {
                       children: [
                         ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/pret_salad.jpg',
-                                height: 100, width: 150, fit: BoxFit.fitWidth)),
+                            child: Image.asset(
+                                'assets/images/${this.foodItem.imageUrl}jpg',
+                                height: 100,
+                                width: 150,
+                                fit: BoxFit.fitWidth)),
                       ],
                     )
                   ],
