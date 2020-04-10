@@ -1,29 +1,11 @@
 class FoodItem {
-  final Object foodDetail;
+  final String shopName;
+  final String itemName;
+  final double price;
+  final int numberItemsRemaining;
+  final double distance;
+  final bool favourite;
 
-  static String getFoodName(foodDetail) {
-    return foodDetail.itemName;
-  }
-
-  static String getShopName(foodDetail) {
-    return foodDetail.shopName;
-  }
-
-  static int getId(foodDetail) {
-    return foodDetail.id;
-  }
-
-  static int getShopDistance(foodDetail) {
-    return foodDetail.distance;
-  }
-
-  static int getPrice(foodDetail) {
-    return foodDetail.price;
-  }
-
-  static int getNumRemaining(foodDetail) {
-    return foodDetail.numRemaining;
-  }
-
-  FoodItem(this.foodDetail);
+  FoodItem(this.shopName, this.itemName, this.price, this.numberItemsRemaining,
+      this.distance, this.favourite);
 }

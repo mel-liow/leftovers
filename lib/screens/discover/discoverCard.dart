@@ -15,63 +15,76 @@ class DiscoverCardWidget extends StatelessWidget {
     return new Card(
       child: Container(
         child: Padding(
-          padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
+          padding: EdgeInsets.only(left: 0, right: 0, bottom: 0),
           child: Column(children: <Widget>[
             Row(
-              children: <Widget>[
-                new ButtonBar(
-                  children: <Widget>[
-                    new IconButton(icon: Icon(Icons.favorite)),
-                    Text(
-                      'Pret A Manger',
-                      style: Theme.of(context).textTheme.bodyText1,
-                      textAlign: TextAlign.left,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: new EdgeInsets.all(0.0),
+                    color: Theme.of(context).accentColor,
+                    child: new ButtonBar(
+                      alignment: MainAxisAlignment.start,
+                      buttonPadding:
+                          EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
+                      children: <Widget>[
+                        new IconButton(icon: Icon(Icons.favorite)),
+                        Text(
+                          this.foodItem.shopName,
+                          style: Theme.of(context).textTheme.headline3,
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+            Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        '0.1 miles away',
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            '${this.foodItem.distance} miles away',
+                            style: Theme.of(context).textTheme.bodyText2,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            '${this.foodItem.itemName}',
+                            style: Theme.of(context).textTheme.bodyText1,
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                          child: Text(
+                            '£${this.foodItem.price}',
+                            style: Theme.of(context).textTheme.bodyText1,
+                          ),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        'Tuna Salad',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
-                      child: Text(
-                        '£3',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                    ),
+                    Column(
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/images/pret_salad.jpg',
+                                height: 100, width: 150, fit: BoxFit.fitWidth)),
+                      ],
+                    )
                   ],
-                ),
-                Column(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset('assets/images/pret_salad.jpg',
-                            height: 100, width: 150, fit: BoxFit.fitWidth)),
-                  ],
-                )
-              ],
-            )
+                )),
           ]),
         ),
       ),

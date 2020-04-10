@@ -6,14 +6,7 @@ import './foodItem.dart';
 class DiscoverWidget extends StatelessWidget {
   final foodCards = List<FoodItem>.generate(
     20,
-    (i) => FoodItem({
-      "shopName": "Pret",
-      "itemName": "Falafel Wrap",
-      "id": 123,
-      "distance": 0.3,
-      "numRemaining": 3,
-      "price": 150
-    }),
+    (i) => FoodItem("Pret A Manger", "Falafel Wrap", 2.50, 3, 0.1, false),
   );
 
   //Fetch from database

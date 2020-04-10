@@ -6,9 +6,10 @@ final ThemeData appThemeData = new ThemeData(
         MaterialColor(CompanyColors.green[50].value, CompanyColors.green),
     primaryColor: CompanyColors.green[500],
     primaryColorBrightness: Brightness.light,
-    accentColor: CompanyColors.beige[500],
+    accentColor: CompanyColors.mustard[500],
     cardTheme: CardTheme(
       color: CompanyColors.beige[500],
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       shadowColor: CompanyColors.mustard[500],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -20,10 +21,8 @@ final ThemeData appThemeData = new ThemeData(
       headline1: TextStyle(
           fontSize: 36.0, fontFamily: 'FreightDisplay', color: Colors.white),
       headline2: TextStyle(fontSize: 24.0),
-      bodyText1: TextStyle(
-          fontSize: 16.0,
-          fontFamily: 'FuturaPT',
-          color: CompanyColors.black[900]),
+      headline3: TextStyle(fontSize: 18.0, color: CompanyColors.beige[50]),
+      bodyText1: TextStyle(fontSize: 16.0, color: CompanyColors.black[900]),
       bodyText2: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic),
     ));
 
