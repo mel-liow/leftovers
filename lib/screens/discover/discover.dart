@@ -10,10 +10,6 @@ class DiscoverWidget extends StatelessWidget {
         "Pret A Manger", "Falafel Wrap", 2.50, 3, 0.1, false, "pret_salad"),
   );
 
-  //Fetch from database
-  // final List<DiscoverCardWidget> discoverCards;
-  // DiscoverWidget({Key key, @required this.discoverCards}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

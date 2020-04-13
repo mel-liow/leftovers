@@ -78,7 +78,8 @@ class DiscoverCardWidget extends StatelessWidget {
                         ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image.asset(
-                                'assets/images/${this.foodItem.imageUrl}jpg',
+                                // 'assets/images/${this.foodItem.imageUrl}jpg',                       'assets/images/${this.foodItem.imageUrl}jpg',
+                                'assets/images/pret_salad.jpg',
                                 height: 100,
                                 width: 150,
                                 fit: BoxFit.fitWidth)),
