@@ -6,8 +6,8 @@ import './foodItem.dart';
 class DiscoverWidget extends StatelessWidget {
   final foodCards = List<FoodItem>.generate(
     20,
-    (i) => FoodItem(
-        "Pret A Manger", "Falafel Wrap", 2.50, 3, 0.1, false, "pret_salad"),
+    (i) => FoodItem("Pret A Manger", "Falafel Wrap", 2.50, 3, 0.1, false,
+        "pret_salad", "nuts", 340, "This is a falalfel wrap", 5.50),
   );
 
   @override
