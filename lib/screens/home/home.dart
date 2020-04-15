@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../placeholder/placeholder.dart';
 import '../discover/discover.dart';
 import 'package:leftovers_app/themes/theme.dart';
 
@@ -14,8 +13,6 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     DiscoverWidget(),
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.white),
   ];
 
   void onTabTapped(int index) {
