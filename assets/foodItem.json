@@ -1,0 +1,79 @@
+[
+  {
+    "shopName": "Pret A Manger",
+    "itemName": "Tuna Salad",
+    "price": 3.00,
+    "numberItemsRemaining": 4,
+    "distance": 0.3,
+    "favourite": false,
+    "imageUrl": "tuna_salad",
+    "allergens": "fish",
+    "calories": 512,
+    "description": "A fishy salad",
+    "shopPrice": 5.25
+  },
+  {
+    "shopName": "Leon",
+    "itemName": "Falaffel Wrap",
+    "price": 3.50,
+    "numberItemsRemaining": 2,
+    "distance": 0.1,
+    "favourite": false,
+    "imageUrl": "falaffel_wrap",
+    "allergens": "dairy",
+    "calories": 312,
+    "description": "A falaffel wrap",
+    "shopPrice": 5.00
+  },{
+    "shopName": "Joe the Juice",
+    "itemName": "Brownie",
+    "price": 2.00,
+    "numberItemsRemaining": 4,
+    "distance": 0.15,
+    "favourite": false,
+    "imageUrl": "brownie",
+    "allergens": "nuts and dairy",
+    "calories": 600,
+    "description": "Mmm chocolate",
+    "shopPrice": 5.50
+  },
+  {
+    "shopName": "Pizza Express",
+    "itemName": "Veggie lasagne",
+    "price": 5.50,
+    "numberItemsRemaining": 4,
+    "distance": 0.3,
+    "favourite": false,
+    "imageUrl": "vegetable_lasagne",
+    "allergens": "dairy",
+    "calories": 800,
+    "description": "Layered pasta",
+    "shopPrice": 6.50
+  },
+  {
+    "shopName": "Home Slice",
+    "itemName": "Pizza",
+    "price": 4.00,
+    "numberItemsRemaining": 2,
+    "distance": 0.1,
+    "favourite": false,
+    "imageUrl": "pizza",
+    "allergens": "dairy",
+    "calories": 712,
+    "description": "pizza yum",
+    "shopPrice": 9.00
+  },
+  {
+    "shopName": "Costa",
+    "itemName": "Cherry Bakewell",
+    "price": 2.00,
+    "numberItemsRemaining": 4,
+    "distance": 0.25,
+    "favourite": false,
+    "imageUrl": "cherry_bakewell",
+    "allergens": "cairy",
+    "calories": 400,
+    "description": "yum",
+    "shopPrice": 4.50
+  }
+]

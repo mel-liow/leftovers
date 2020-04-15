@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class FoodItem {
   final String shopName;
   final String itemName;
@@ -23,4 +25,20 @@ class FoodItem {
       this.calories,
       this.description,
       this.shopPrice);
+
+  // factory FoodItem.fromJson(Map<String, dynamic> json) {
+  //   return new FoodItem(
+  //     shopName: json['shopName'] as String,
+  //     itemName: json['itemName'] as String,
+  //     price: json['price'] as double,
+  //     numberItemsRemaining: json['numberItemsRemaining'] as int,
+  //     distance: json[''] as double
+  //     favourite: json[''] as bool
+  //     imageUrl: json[''] as String
+  //     allergens: json[''] as String
+  //     calories: json[''] as int
+  //     description: json[''] as String
+  //     shopPrice: json[''] as double
+  //   );
+  // }
 }
