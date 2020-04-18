@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: CompanyColors.beige[50],
+        color: CompanyColors.beige[500],
         child: Scaffold(
           appBar: AppBar(
             centerTitle: false,

@@ -11,6 +11,8 @@ class FoodCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('foodItem');
+    print(foodItem);
     return Scaffold(
         appBar: AppBar(
           title: Text(foodItem.itemName),
@@ -47,11 +49,8 @@ class _FoodImage extends StatelessWidget {
       children: [
         ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset(
-                // 'assets/images/${foodItem.imageUrl}jpg',
-                'assets/images/pret_salad.jpg',
-                width: 300,
-                fit: BoxFit.scaleDown)),
+            child: Image.asset('assets/images/${foodItem.imageUrl}.jpg',
+                width: 300, fit: BoxFit.fill)),
       ],
     );
   }
@@ -200,8 +199,8 @@ class _Allergens extends StatelessWidget {
 
 class _AddToCart extends StatefulWidget {
   final FoodItem foodItem;
-  final int count;
-  _AddToCart({Key key, @required this.foodItem, this.count});
+  // final int count;
+  _AddToCart({Key key, @required this.foodItem});
 
   @override
   _AddToCartState createState() => new _AddToCartState(foodItem: foodItem);
@@ -232,27 +231,26 @@ class _AddToCartState extends State<_AddToCart> {
   @override
   Widget build(BuildContext context) {
     var cart = Provider.of<CartModel>(context);
-
     return Padding(
         padding: EdgeInsets.all(12.0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Center(
               child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               ButtonCounter(
                   countIncrementer: countIncrementer,
                   countDecrementer: countDecrementer,
                   count: _count),
-              // FlatButton(
-              //   onPressed: cart.items.contains(foodItem)
-              //       ? null
-              //       : () => cart.add(foodItem, _count),
-              //   child:
-              //       cart.items.firstWhere((item) => item.id == foodItem.id) !=
-              //               null
-              //           ? Icon(Icons.check, semanticLabel: 'ADDED')
-              //           : Text('ADD'),
-              // )
+              RaisedButton(
+                  onPressed: cart.items.contains(foodItem)
+                      ? null
+                      : () => cart.add(foodItem, _count),
+                  child: Text('ADD'))
+              // cart.items.firstWhere((item) => item.id == foodItem.id) ==
+              //         null
+              //     ? Text('ADD')
+              //     : Icon(Icons.check, semanticLabel: 'ADDED'))
             ],
           ))
         ]));

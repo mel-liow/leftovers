@@ -6,7 +6,7 @@ class CartModel extends ChangeNotifier {
   CatalogModel _catalog;
 
   final List<FoodItem> _items = [];
-  final List<int> _itemIds = [];
+  // final List<int> _itemIds = [];
 
   CatalogModel get catalog => _catalog;
 
