@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './discoverCard.dart';
-import './foodCard.dart';
+import 'package:leftovers_app/screens/discover/discoverCard.dart';
+import 'package:leftovers_app/screens/discover/foodCard.dart';
 import 'package:leftovers_app/models/catalogModel.dart';
 import 'package:provider/provider.dart';
 
@@ -8,11 +8,11 @@ class DiscoverWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var catalog = Provider.of<CatalogModel>(context);
-    var items = CatalogModel.items;
+    var items = catalog.items;
 
     return ListView.builder(
       padding: EdgeInsets.all(20),
-      itemCount: catalog.getNumberFoodItems(),
+      itemCount: catalog.items.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -21,7 +21,6 @@ class DiscoverWidget extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => FoodCardWidget(
                   foodItem: items[index],
-                  addToOrder: () {},
                 ),
                 settings: RouteSettings(
                   arguments: items[index],
@@ -29,8 +28,7 @@ class DiscoverWidget extends StatelessWidget {
               ),
             );
           },
-          child: DiscoverCardWidget(
-              foodItem: CatalogModel.items[index], onLike: () {}),
+          child: DiscoverCardWidget(foodItem: items[index], onLike: () {}),
         );
       },
     );

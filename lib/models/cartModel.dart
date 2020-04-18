@@ -18,14 +18,14 @@ class CartModel extends ChangeNotifier {
     _catalog = newCatalog;
     notifyListeners();
   }
+  // List <int> get itemIds =>_itemIds.map((id) => _catalog.getById(id)).id);
 
-  List<FoodItem> get items =>
-      _itemIds.map((id) => _catalog.getById(id)).toList();
+  List<FoodItem> get items => _items;
 
   double get totalPrice =>
       _items.fold(0, (total, current) => total + current.price);
 
-  void add(FoodItem item) {
+  void add(FoodItem item, int count) {
     _items.add(item);
     notifyListeners();
   }

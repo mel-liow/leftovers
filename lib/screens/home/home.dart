@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../discover/discover.dart';
+import 'package:leftovers_app/screens/discover/discover.dart';
 import 'package:leftovers_app/themes/theme.dart';
+import 'package:leftovers_app/screens/shoppingCart/shoppingCart.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,6 +14,8 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     DiscoverWidget(),
+    ShoppingCartWidget(),
+    ShoppingCartWidget()
   ];
 
   void onTabTapped(int index) {

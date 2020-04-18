@@ -1,7 +1,7 @@
 import 'package:leftovers_app/models/foodItem.dart';
 
 class CatalogModel {
-  static List<FoodItem> items = [
+  final List<FoodItem> items = [
     FoodItem("Pret A Manger", "Falafel Wrap", 2.50, 3, 0.1, false, "pret_salad",
         "nuts", 340, "This is a falalfel wrap", 5.50, 1),
     FoodItem("Leon", "Falafel Wrap", 2.50, 3, 0.1, false, "pret_salad", "nuts",
@@ -15,5 +15,5 @@ class CatalogModel {
   FoodItem getById(int id) =>
       items.singleWhere((foodItem) => foodItem.id == id);
 
-  int getNumberFoodItems() => items.length;
+  // FoodItem reduceStock(int id) =>
 }

@@ -29,7 +29,7 @@ class DiscoverCardWidget extends StatelessWidget {
                       children: <Widget>[
                         new IconButton(icon: Icon(Icons.favorite)),
                         Text(
-                          this.foodItem.shopName,
+                          foodItem.shopName,
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.left,
                         ),
@@ -52,14 +52,14 @@ class DiscoverCardWidget extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            '${this.foodItem.distance} miles away',
+                            '${foodItem.distance} miles away',
                             style: Theme.of(context).textTheme.bodyText2,
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            '${this.foodItem.itemName}',
+                            '${foodItem.itemName}',
                             style: Theme.of(context).textTheme.bodyText1,
                           ),
                         ),
@@ -67,7 +67,7 @@ class DiscoverCardWidget extends StatelessWidget {
                           padding:
                               EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                           child: Text(
-                            '£${this.foodItem.price}',
+                            '£${foodItem.price}',
                             style: Theme.of(context).textTheme.bodyText1,
                           ),
                         ),
@@ -78,7 +78,7 @@ class DiscoverCardWidget extends StatelessWidget {
                         ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image.asset(
-                                // 'assets/images/${this.foodItem.imageUrl}jpg',                       'assets/images/${this.foodItem.imageUrl}jpg',
+                                // 'assets/images/${foodItem.imageUrl}jpg',
                                 'assets/images/pret_salad.jpg',
                                 height: 100,
                                 width: 150,
