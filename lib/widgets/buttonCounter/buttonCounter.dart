@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+import 'package:leftovers_app/themes/theme.dart';
 
 class ButtonCounter extends StatefulWidget {
+  final Function handleSubmit;
+  final int maxConstraint;
+
+  ButtonCounter(this.handleSubmit, this.maxConstraint);
+
   @override
   State<StatefulWidget> createState() {
     return _ButtonCounterState();
@@ -26,25 +31,27 @@ class _ButtonCounterState extends State<ButtonCounter> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         FloatingActionButton(
+          heroTag: "btn_minus",
           onPressed: minus,
           child: new Icon(
             Icons.remove,
             color: Colors.black,
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: CompanyColors.beige[50],
         ),
-        Text('$_count', style: TextStyle(fontSize: 30.0)),
+        Padding(
+            padding: EdgeInsets.only(left: 18, right: 18),
+            child: Text('$_count', style: TextStyle(fontSize: 30.0))),
         FloatingActionButton(
+          heroTag: "btn_add",
           onPressed: add,
           child: new Icon(
             Icons.add,
             color: Colors.black,
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: CompanyColors.beige[50],
         ),
       ],
     );

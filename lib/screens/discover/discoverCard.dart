@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './foodItem.dart';
+import 'package:leftovers_app/models/foodItem.dart';
 
 class DiscoverCardWidget extends StatelessWidget {
   final FoodItem foodItem;

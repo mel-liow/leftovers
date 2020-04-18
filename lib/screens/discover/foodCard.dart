@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leftovers_app/themes/theme.dart';
-import './foodItem.dart';
+import 'package:leftovers_app/models/foodItem.dart';
+import '../../widgets/buttonCounter/buttonCounter.dart';
 
 class FoodCardWidget extends StatelessWidget {
   final FoodItem foodItem;
@@ -162,6 +162,15 @@ class FoodCardWidget extends StatelessWidget {
                             ),
                           ],
                         )),
+                    Padding(
+                        padding: EdgeInsets.all(12.0),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Center(
+                                  child: ButtonCounter(this.addToOrder,
+                                      this.foodItem.numberItemsRemaining))
+                            ]))
                   ]),
                 ),
               ),
