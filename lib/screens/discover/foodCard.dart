@@ -6,33 +6,50 @@ import 'package:provider/provider.dart';
 
 class FoodCardWidget extends StatelessWidget {
   final FoodItem foodItem;
+  final Function onClose;
 
-  FoodCardWidget({Key key, @required this.foodItem}) : super(key: key);
+  FoodCardWidget({Key key, @required this.foodItem, this.onClose})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    print('foodItem');
-    print(foodItem);
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(foodItem.itemName),
-        ),
-        body: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Card(
-              child: Container(
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Column(children: <Widget>[
-                    _FoodImage(foodItem: foodItem),
-                    _ShopDetail(foodItem: foodItem),
-                    _Description(foodItem: foodItem),
-                    _Allergens(foodItem: foodItem),
-                    _AddToCart(foodItem: foodItem)
-                  ]),
-                ),
+    return Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Card(
+          child: Container(
+            child: Column(children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Align(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                        icon: new Icon(Icons.close),
+                        onPressed: () => this.onClose(),
+                        padding: EdgeInsets.zero),
+                  )),
+                ],
               ),
-            )));
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Padding(
+                    padding: EdgeInsets.only(left: 16.0, right: 16.0),
+                    child: Center(
+                      child: Column(children: <Widget>[
+                        _FoodImage(foodItem: foodItem),
+                        _ShopDetail(foodItem: foodItem),
+                        _Description(foodItem: foodItem),
+                        _Allergens(foodItem: foodItem),
+                        _AddToCart(foodItem: foodItem)
+                      ]),
+                    ),
+                  ))
+                ],
+              )
+            ]),
+          ),
+        ));
   }
 }
 
@@ -50,7 +67,7 @@ class _FoodImage extends StatelessWidget {
         ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: Image.asset('assets/images/${foodItem.imageUrl}.jpg',
-                width: 300, fit: BoxFit.fill)),
+                height: 140, width: 250, fit: BoxFit.cover)),
       ],
     );
   }
@@ -199,7 +216,6 @@ class _Allergens extends StatelessWidget {
 
 class _AddToCart extends StatefulWidget {
   final FoodItem foodItem;
-  // final int count;
   _AddToCart({Key key, @required this.foodItem});
 
   @override
@@ -231,6 +247,7 @@ class _AddToCartState extends State<_AddToCart> {
   @override
   Widget build(BuildContext context) {
     var cart = Provider.of<CartModel>(context);
+
     return Padding(
         padding: EdgeInsets.all(12.0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -246,11 +263,12 @@ class _AddToCartState extends State<_AddToCart> {
                   onPressed: cart.items.contains(foodItem)
                       ? null
                       : () => cart.add(foodItem, _count),
-                  child: Text('ADD'))
-              // cart.items.firstWhere((item) => item.id == foodItem.id) ==
-              //         null
-              //     ? Text('ADD')
-              //     : Icon(Icons.check, semanticLabel: 'ADDED'))
+                  child: (cart.items.firstWhere(
+                              (item) => item.id == foodItem.id,
+                              orElse: () => null) ==
+                          null)
+                      ? Text('add to order')
+                      : Text('added'))
             ],
           ))
         ]));

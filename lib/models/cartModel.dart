@@ -27,6 +27,7 @@ class CartModel extends ChangeNotifier {
 
   void add(FoodItem item, int count) {
     _items.add(item);
+    //decrement count of item in catalogue
     notifyListeners();
   }
 

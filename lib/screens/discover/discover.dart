@@ -3,34 +3,37 @@ import 'package:leftovers_app/screens/discover/discoverCard.dart';
 import 'package:leftovers_app/screens/discover/foodCard.dart';
 import 'package:leftovers_app/models/catalogModel.dart';
 import 'package:provider/provider.dart';
+import 'package:leftovers_app/models/foodItem.dart';
 
-class DiscoverWidget extends StatelessWidget {
+class DiscoverWidget extends StatefulWidget {
+  @override
+  _DiscoverWidgetState createState() => new _DiscoverWidgetState();
+}
+
+class _DiscoverWidgetState extends State<DiscoverWidget> {
+  FoodItem _foodItem;
+
+  clearItem() {
+    setState(() => _foodItem = null);
+  }
+
   @override
   Widget build(BuildContext context) {
     var catalog = Provider.of<CatalogModel>(context);
     var items = catalog.items;
 
-    return ListView.builder(
-      padding: EdgeInsets.all(20),
-      itemCount: catalog.items.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => FoodCardWidget(
-                  foodItem: items[index],
-                ),
-                settings: RouteSettings(
-                  arguments: items[index],
-                ),
-              ),
-            );
-          },
-          child: DiscoverCardWidget(foodItem: items[index], onLike: () {}),
-        );
-      },
-    );
+    return _foodItem != null
+        ? FoodCardWidget(foodItem: _foodItem, onClose: clearItem)
+        : ListView.builder(
+            padding: EdgeInsets.all(20),
+            itemCount: catalog.items.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () => setState(() => _foodItem = items[index]),
+                child:
+                    DiscoverCardWidget(foodItem: items[index], onLike: () {}),
+              );
+            },
+          );
   }
 }
