@@ -25,7 +25,11 @@ class CartModel extends ChangeNotifier {
   double get totalPrice =>
       _items.fold(0, (total, current) => total + current.price);
 
+  int get totalItems =>
+      _items.fold(0, (total, current) => total + current.numberSelected);
+
   void add(FoodItem item, int count) {
+    item.numberSelected = count;
     _items.add(item);
     //decrement count of item in catalogue
     notifyListeners();

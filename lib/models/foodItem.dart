@@ -15,6 +15,8 @@ class FoodItem {
   final double shopPrice;
   final int id;
 
+  int numberSelected;
+
   FoodItem(
       this.shopName,
       this.itemName,

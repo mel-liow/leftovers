@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:leftovers_app/screens/discover/discover.dart';
 import 'package:leftovers_app/themes/theme.dart';
 import 'package:leftovers_app/screens/shoppingCart/shoppingCart.dart';
+import 'package:leftovers_app/models/cartModel.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -26,6 +28,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    var cart = Provider.of<CartModel>(context);
+    var totalItems = cart.totalItems;
     return Container(
         color: CompanyColors.beige[500],
         child: Scaffold(
@@ -51,7 +55,8 @@ class _HomeState extends State<Home> {
                 title: Text('favourites'),
               ),
               new BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_basket), title: Text('orders'))
+                  icon: Icon(Icons.shopping_basket),
+                  title: Text('orders $totalItems'))
             ],
           ),
         ));

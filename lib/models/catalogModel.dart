@@ -11,7 +11,7 @@ class CatalogModel {
     FoodItem("Subway", "Ham Sandwich", 2.50, 3, 0.1, false, "ham_sandwich",
         "nuts", 340, "This is a falalfel wrap", 5.50, 4),
     FoodItem("Nero", "Cheese Toastie", 2.50, 3, 0.1, false, "cheese_toastie",
-        "nuts", 340, "This is a falalfel wrap", 5.50, 4),
+        "nuts", 340, "This is a falalfel wrap", 5.50, 5),
   ];
 
   FoodItem getById(int id) =>
