@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leftovers_app/screens/discover/discover.dart';
+import 'package:leftovers_app/screens/favourites/favourites.dart';
 import 'package:leftovers_app/themes/theme.dart';
 import 'package:leftovers_app/screens/shoppingCart/shoppingCart.dart';
 import 'package:leftovers_app/models/cartModel.dart';

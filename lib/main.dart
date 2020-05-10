@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:leftovers_app/models/cartModel.dart';
 import 'package:leftovers_app/screens/home/home.dart';
 import 'package:leftovers_app/themes/theme.dart' as Theme;
-import 'package:leftovers_app/models/catalogModel.dart';
+import 'package:leftovers_app/models/foodModel.dart';
 
 void main() {
   runApp(
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          Provider(create: (context) => CatalogModel()),
-          ChangeNotifierProxyProvider<CatalogModel, CartModel>(
+          Provider(create: (context) => FoodCatalogue()),
+          ChangeNotifierProxyProvider<FoodCatalogue, CartModel>(
             create: (context) => CartModel(),
             update: (context, catalog, cart) {
               cart.catalog = catalog;

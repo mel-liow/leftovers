@@ -9,10 +9,7 @@ class ShoppingCartWidget extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: _CartList(),
-          ),
+          child: _CartList(),
         ),
         Divider(height: 4, color: Colors.black),
         // _CartTotal()

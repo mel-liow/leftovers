@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leftovers_app/models/foodItem.dart';
+import 'package:leftovers_app/models/foodModel.dart';
+import 'package:leftovers_app/models/shopModel.dart';
 
 class DiscoverCardWidget extends StatelessWidget {
   final FoodItem foodItem;
@@ -7,7 +8,6 @@ class DiscoverCardWidget extends StatelessWidget {
 
   DiscoverCardWidget({Key key, @required this.foodItem, this.onLike})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return new Card(
@@ -29,7 +29,7 @@ class DiscoverCardWidget extends StatelessWidget {
                       children: <Widget>[
                         new IconButton(icon: Icon(Icons.favorite)),
                         Text(
-                          foodItem.shopName,
+                          Shop.getShopName(foodItem.shopId),
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.left,
                         ),

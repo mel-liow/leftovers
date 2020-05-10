@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leftovers_app/models/foodItem.dart';
+import 'package:leftovers_app/models/foodModel.dart';
 import 'package:leftovers_app/widgets/buttonCounter/buttonCounter.dart';
 import 'package:leftovers_app/models/cartModel.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +14,7 @@ class FoodCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(20.0),
         child: Card(
           child: Container(
             child: Column(children: <Widget>[
@@ -255,11 +255,17 @@ class _AddToCartState extends State<_AddToCart> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ButtonCounter(
-                  countIncrementer: countIncrementer,
-                  countDecrementer: countDecrementer,
-                  count: _count),
+              Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: ButtonCounter(
+                    countIncrementer: countIncrementer,
+                    countDecrementer: countDecrementer,
+                    count: _count),
+              ),
               RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
                   onPressed: cart.items.contains(foodItem)
                       ? null
                       : () => cart.add(foodItem, _count),
