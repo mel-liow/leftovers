@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:leftovers_app/models/favouriteModel.dart';
 import 'package:leftovers_app/models/foodModel.dart';
 import 'package:leftovers_app/models/shopModel.dart';
+import 'package:provider/provider.dart';
 
 class DiscoverCardWidget extends StatelessWidget {
   final FoodItem foodItem;
-  final Function() onLike;
 
-  DiscoverCardWidget({Key key, @required this.foodItem, this.onLike})
-      : super(key: key);
+  DiscoverCardWidget({Key key, @required this.foodItem}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var favourites = Provider.of<FavouriteModel>(context);
+
     return new Card(
       child: Container(
         child: Padding(
@@ -27,7 +29,14 @@ class DiscoverCardWidget extends StatelessWidget {
                       buttonPadding:
                           EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
                       children: <Widget>[
-                        new IconButton(icon: Icon(Icons.favorite)),
+                        new IconButton(
+                          icon: Icon(Icons.favorite),
+                          color: foodItem.favourite ? Colors.red : Colors.white,
+                          highlightColor: Colors.red,
+                          onPressed: () => foodItem.favourite
+                              ? favourites.remove(foodItem)
+                              : favourites.add(foodItem),
+                        ),
                         Text(
                           Shop.getShopName(foodItem.shopId),
                           style: Theme.of(context).textTheme.headline3,
