@@ -20,7 +20,6 @@ class _DiscoverWidgetState extends State<DiscoverWidget> {
   Widget build(BuildContext context) {
     var catalogue = Provider.of<FoodCatalogue>(context);
     var items = catalogue.foodCatalogue;
-    print(items);
     return _foodItem != null
         ? FoodCardWidget(foodItem: _foodItem, onClose: clearItem)
         : ListView.builder(
@@ -31,8 +30,7 @@ class _DiscoverWidgetState extends State<DiscoverWidget> {
                   onTap: () => setState(() => _foodItem = items[index]),
                   child: Padding(
                     padding: EdgeInsets.only(top: 12),
-                    child: DiscoverCardWidget(
-                        foodItem: items[index], onLike: () {}),
+                    child: DiscoverCardWidget(foodItem: items[index]),
                   ));
             },
           );
