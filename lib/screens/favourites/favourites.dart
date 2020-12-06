@@ -20,9 +20,11 @@ class _FavouritesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var favourites = Provider.of<FavouriteModel>(context);
+
     return ListView.builder(
       // scrollDirection: Axis.horizontal,
       padding: EdgeInsets.all(20),
+      itemCount: favourites.items.length,
       itemBuilder: (context, index) {
         return DiscoverCardWidget(
           foodItem: favourites.items[index],
