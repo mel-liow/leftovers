@@ -8,12 +8,11 @@ class CartModel extends ChangeNotifier {
 
   FoodCatalogue get foodCatalogue => _foodCatalogue;
 
-  set catalog(FoodCatalogue newFoodCatalogue) {
+  set cartItems(FoodCatalogue newFoodCatalogue) {
     assert(newFoodCatalogue != null);
     _foodCatalogue = newFoodCatalogue;
     notifyListeners();
   }
-  // List <int> get itemIds =>_itemIds.map((id) => _catalog.getById(id)).id);
 
   List<FoodItem> get items => _items;
 
@@ -27,6 +26,11 @@ class CartModel extends ChangeNotifier {
     item.numberSelected = count;
     _items.add(item);
     //decrement count of item in catalogue
+    notifyListeners();
+  }
+
+  void remove(FoodItem item) {
+    _items.removeWhere((cartItem) => cartItem.id == item.id);
     notifyListeners();
   }
 
